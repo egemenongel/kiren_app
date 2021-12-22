@@ -1,7 +1,7 @@
 # kiren_app
 
 A new Flutter project.
-s
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
