@@ -193,12 +193,9 @@ class HomeView extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProjectView(
-                                    projectModel: projectList[index],
-                                  )));
+                      Get.to(ProjectView(
+                        projectModel: projectList[index],
+                      ));
                     },
                     child: Card(
                       shape: const RoundedRectangleBorder(
@@ -373,14 +370,7 @@ class HomeView extends StatelessWidget {
                                     padding: EdgeInsets.zero,
                                     constraints: const BoxConstraints(),
                                     splashRadius: 20,
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => ProjectView(
-                                                  projectModel:
-                                                      projectList[index])));
-                                    },
+                                    onPressed: () {},
                                     icon: const Icon(
                                       Icons.more_vert,
                                     ),
@@ -464,12 +454,9 @@ class HomeView extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProjectView(
-                                      projectModel: myList[index],
-                                    )));
+                        Get.to(ProjectView(
+                          projectModel: myList[index],
+                        ));
                       },
                       child: Card(
                         shape: const RoundedRectangleBorder(
@@ -644,15 +631,7 @@ class HomeView extends StatelessWidget {
                                       padding: EdgeInsets.zero,
                                       constraints: const BoxConstraints(),
                                       splashRadius: 20,
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ProjectView(
-                                                        projectModel:
-                                                            myList[index])));
-                                      },
+                                      onPressed: () {},
                                       icon: const Icon(
                                         Icons.more_vert,
                                       ),

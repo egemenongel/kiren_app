@@ -53,11 +53,7 @@ class LoginView extends StatelessWidget {
                           onPressed: () {
                             if (formController.formKey.currentState!
                                 .validate()) {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const HomeView(),
-                                  ));
+                              Get.to(const HomeView());
                             }
                           },
                           child: const FittedBox(
