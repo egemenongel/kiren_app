@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:kiren_app/views/projects/project_model.dart';
+
+import '../views/projects/project_model.dart';
 
 class HomeController extends GetxController {
   TextEditingController searchText = TextEditingController();

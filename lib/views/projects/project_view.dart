@@ -1,12 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kiren_app/controller/home_controller.dart';
-import 'package:kiren_app/helper/size_helper.dart';
-import 'package:kiren_app/views/projects/project_model.dart';
-
-import 'package:kiren_app/controller/project_controller.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
+
+import '../../controller/home_controller.dart';
+import '../../helper/size_helper.dart';
+import 'project_model.dart';
 
 class ProjectView extends StatelessWidget {
   ProjectView({
@@ -16,7 +15,6 @@ class ProjectView extends StatelessWidget {
   ProjectModel projectItem;
   @override
   Widget build(BuildContext context) {
-    final homeController = Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

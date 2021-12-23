@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kiren_app/views/login/login_view.dart';
+
+import 'views/login/login_view.dart';
 
 void main() {
   runApp(const MyApp());

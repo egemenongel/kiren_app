@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:kiren_app/helper/size_helper.dart';
-import 'package:kiren_app/views/home/home_view.dart';
-import 'package:kiren_app/controller/login_controller.dart';
+import '../../helper/size_helper.dart';
+import '../home/home_view.dart';
+import '../../controller/login_controller.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);

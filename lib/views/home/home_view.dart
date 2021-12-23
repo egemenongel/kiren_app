@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kiren_app/helper/size_helper.dart';
-import 'package:kiren_app/controller/home_controller.dart';
-import 'package:kiren_app/views/projects/project_view.dart';
+import '../../helper/size_helper.dart';
+import '../../controller/home_controller.dart';
+import '../projects/project_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
