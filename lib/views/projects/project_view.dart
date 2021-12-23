@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kiren_app/controller/home_controller.dart';
 import 'package:kiren_app/helper/size_helper.dart';
 import 'package:kiren_app/views/projects/project_model.dart';
 
@@ -8,13 +9,14 @@ import 'package:kiren_app/controller/project_controller.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ProjectView extends StatelessWidget {
-  const ProjectView({
+  ProjectView({
+    required this.projectItem,
     Key? key,
-    required this.projectModel,
   }) : super(key: key);
-  final ProjectModel projectModel;
+  ProjectModel projectItem;
   @override
   Widget build(BuildContext context) {
+    final homeController = Get.put(HomeController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -48,7 +50,7 @@ class ProjectView extends StatelessWidget {
               flex: 4,
               child: FittedBox(
                 child: Text(
-                  projectModel.title,
+                  projectItem.title,
                   style: const TextStyle(
                     color: Color(0xff686868),
                     fontWeight: FontWeight.w600,
@@ -140,7 +142,7 @@ class ProjectView extends StatelessWidget {
   }
 
   Widget buildDonateBar(BuildContext context) {
-    final ProjectController projectController = Get.put(ProjectController());
+    final HomeController homeController = Get.put(HomeController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.max,
@@ -169,23 +171,23 @@ class ProjectView extends StatelessWidget {
                           widget: CircleAvatar(
                             radius: 44.0,
                             backgroundColor:
-                                context.theme.colorScheme.secondaryVariant,
+                                Get.theme.colorScheme.secondaryVariant,
                           ),
                         ),
                         GaugeAnnotation(
-                          widget: Text("${projectController.donation}%"),
+                          widget: Text("${projectItem.donation}%"),
                           positionFactor: 1.60,
                         ),
                       ],
                       pointers: [
                         RangePointer(
-                            value: projectController.donation.toDouble(),
+                            value: projectItem.donation.toDouble(),
                             cornerStyle: CornerStyle.bothCurve,
                             enableAnimation: true,
                             animationDuration: 1200,
                             animationType: AnimationType.ease,
                             sizeUnit: GaugeSizeUnit.factor,
-                            color: context.theme.colorScheme.primaryVariant,
+                            color: Get.theme.colorScheme.primaryVariant,
                             width: 0.07),
                       ]),
                 ],
@@ -198,7 +200,7 @@ class ProjectView extends StatelessWidget {
           flex: 12,
           child: ElevatedButton(
             onPressed: () {
-              projectController.donate();
+              homeController.donate(projectItem);
             },
             child: const Text(
               "Donate",
@@ -416,14 +418,14 @@ class ProjectView extends StatelessWidget {
               text:
                   "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed\ndiam nonummy nibh euismod tincidunt ut laoreet dolore\nmagna aliquam erat volutpat. ",
               style: TextStyle(
-                color: context.theme.colorScheme.onBackground,
+                color: Get.theme.colorScheme.onBackground,
               ),
             ),
             TextSpan(
               text: "More...",
               recognizer: TapGestureRecognizer()..onTap = () => print("More"),
               style: TextStyle(
-                color: context.theme.colorScheme.secondaryVariant,
+                color: Get.theme.colorScheme.secondaryVariant,
               ),
             ),
           ],
@@ -462,14 +464,14 @@ class ProjectView extends StatelessWidget {
             text:
                 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed\ndiam nonummy nibh euismod tincidunt ut laoreet dolore\nmagna aliquam erat volutpat. ",
             style: TextStyle(
-              color: context.theme.colorScheme.onBackground,
+              color: Get.theme.colorScheme.onBackground,
             ),
           ),
           TextSpan(
             text: "More...",
             recognizer: TapGestureRecognizer()..onTap = () => print("More"),
             style: TextStyle(
-              color: context.theme.colorScheme.secondaryVariant,
+              color: Get.theme.colorScheme.secondaryVariant,
             ),
           ),
         ],

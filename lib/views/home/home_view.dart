@@ -57,7 +57,7 @@ class HomeView extends StatelessWidget {
                                 "Featured & recommended",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  color: context.theme.colorScheme.onBackground,
+                                  color: Get.theme.colorScheme.onBackground,
                                 ),
                               ),
                             ),
@@ -113,7 +113,7 @@ class HomeView extends StatelessWidget {
                         "Transformation \n of new ideas",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: context.theme.colorScheme.primary,
+                          color: Get.theme.colorScheme.primary,
                         ),
                       ),
                     ),
@@ -148,21 +148,21 @@ class HomeView extends StatelessWidget {
             alignLabelWithHint: true,
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: context.theme.colorScheme.primaryVariant,
+                  color: Get.theme.colorScheme.primaryVariant,
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(
                   50.0,
                 ))),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: context.theme.colorScheme.secondary,
+                  color: Get.theme.colorScheme.secondary,
                 ),
                 borderRadius: const BorderRadius.all(Radius.circular(
                   50.0,
                 ))),
             border: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: context.theme.colorScheme.secondary,
+                  color: Get.theme.colorScheme.secondary,
                 ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(
@@ -186,6 +186,7 @@ class HomeView extends StatelessWidget {
         itemCount: homeController.projectList.length,
         itemBuilder: (BuildContext context, int index) {
           var projectList = homeController.projectList;
+          var projectItem = projectList[index];
           return Padding(
               padding: smallestPadding(context),
               child: Stack(
@@ -193,9 +194,9 @@ class HomeView extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(ProjectView(
-                        projectModel: projectList[index],
-                      ));
+                      Get.to(() => (ProjectView(
+                            projectItem: projectItem,
+                          )));
                     },
                     child: Card(
                       shape: const RoundedRectangleBorder(
@@ -387,7 +388,7 @@ class HomeView extends StatelessWidget {
                     bottom: 95,
                     height: 31,
                     child: CircleAvatar(
-                        backgroundColor: context.theme.colorScheme.secondary,
+                        backgroundColor: Get.theme.colorScheme.secondary,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -398,7 +399,7 @@ class HomeView extends StatelessWidget {
                               flex: 5,
                               child: Icon(
                                 Icons.star,
-                                color: context.theme.colorScheme.primary,
+                                color: Get.theme.colorScheme.primary,
                                 size: 10,
                               ),
                             ),
@@ -408,7 +409,7 @@ class HomeView extends StatelessWidget {
                                 child: Text(
                                   "4.5",
                                   style: TextStyle(
-                                    color: context.theme.colorScheme.primary,
+                                    color: Get.theme.colorScheme.primary,
                                   ),
                                 ),
                               ),
@@ -447,6 +448,7 @@ class HomeView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10),
           itemCount: myList.length,
           itemBuilder: (BuildContext context, int index) {
+            var projectItem = myList[index];
             return Padding(
                 padding: smallestPadding(context),
                 child: Stack(
@@ -454,9 +456,9 @@ class HomeView extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.to(ProjectView(
-                          projectModel: myList[index],
-                        ));
+                        Get.to(() => ProjectView(
+                              projectItem: projectItem,
+                            ));
                       },
                       child: Card(
                         shape: const RoundedRectangleBorder(
@@ -648,7 +650,7 @@ class HomeView extends StatelessWidget {
                       bottom: 95,
                       height: 31,
                       child: CircleAvatar(
-                          backgroundColor: context.theme.colorScheme.secondary,
+                          backgroundColor: Get.theme.colorScheme.secondary,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -659,7 +661,7 @@ class HomeView extends StatelessWidget {
                                 flex: 5,
                                 child: Icon(
                                   Icons.star,
-                                  color: context.theme.colorScheme.primary,
+                                  color: Get.theme.colorScheme.primary,
                                   size: 10,
                                 ),
                               ),
@@ -669,7 +671,7 @@ class HomeView extends StatelessWidget {
                                   child: Text(
                                     "4.5",
                                     style: TextStyle(
-                                      color: context.theme.colorScheme.primary,
+                                      color: Get.theme.colorScheme.primary,
                                     ),
                                   ),
                                 ),
@@ -689,9 +691,9 @@ class HomeView extends StatelessWidget {
   Widget buildNavBar(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: context.theme.colorScheme.primary,
+        color: Get.theme.colorScheme.primary,
         border: Border.all(
-          color: context.theme.colorScheme.secondaryVariant,
+          color: Get.theme.colorScheme.secondaryVariant,
         ),
       ),
       height: displayHeight(context) * 0.088,
@@ -699,19 +701,19 @@ class HomeView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            color: context.theme.colorScheme.secondary,
+            color: Get.theme.colorScheme.secondary,
             onPressed: () {},
             icon: const Icon(
               Icons.home,
             ),
           ),
           IconButton(
-            color: context.theme.colorScheme.secondary,
+            color: Get.theme.colorScheme.secondary,
             onPressed: () {},
             icon: const Icon(Icons.grid_view_sharp),
           ),
           IconButton(
-            color: context.theme.colorScheme.secondary,
+            color: Get.theme.colorScheme.secondary,
             onPressed: () {},
             icon: const Icon(
               Icons.person,

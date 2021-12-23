@@ -53,7 +53,7 @@ class LoginView extends StatelessWidget {
                           onPressed: () {
                             if (formController.formKey.currentState!
                                 .validate()) {
-                              Get.to(const HomeView());
+                              Get.to(() => (const HomeView()));
                             }
                           },
                           child: const FittedBox(
@@ -68,7 +68,7 @@ class LoginView extends StatelessWidget {
                                 const EdgeInsets.symmetric(vertical: 20.0),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                context.theme.colorScheme.primary,
+                                Get.theme.colorScheme.primary,
                               ),
                               foregroundColor: MaterialStateProperty.all<Color>(
                                 const Color(0xff8AE2A3),
@@ -79,7 +79,7 @@ class LoginView extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30.0),
                                 side: BorderSide(
                                     width: 2.0,
-                                    color: context.theme.colorScheme.secondary),
+                                    color: Get.theme.colorScheme.secondary),
                               ))),
                         ),
                       ),
@@ -133,7 +133,7 @@ class LoginView extends StatelessWidget {
             child: TextFormField(
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: context.theme.colorScheme.primary,
+                color: Get.theme.colorScheme.primary,
               ),
               decoration: const InputDecoration(
                   hintText: "Username / Email",
@@ -164,7 +164,7 @@ class LoginView extends StatelessWidget {
             child: TextFormField(
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: context.theme.colorScheme.primary,
+                color: Get.theme.colorScheme.primary,
               ),
               decoration: const InputDecoration(
                   hintText: "Password",
@@ -200,7 +200,7 @@ class LoginView extends StatelessWidget {
                       TextSpan(
                         text: "Don't have an ccount? ",
                         style: TextStyle(
-                          color: context.theme.colorScheme.primaryVariant,
+                          color: Get.theme.colorScheme.primaryVariant,
                         ),
                       ),
                       TextSpan(
@@ -208,7 +208,7 @@ class LoginView extends StatelessWidget {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () => print("Sign Up"),
                         style: TextStyle(
-                          color: context.theme.colorScheme.onSecondary,
+                          color: Get.theme.colorScheme.onSecondary,
                         ),
                       ),
                     ],
@@ -228,7 +228,7 @@ class LoginView extends StatelessWidget {
 
   Widget buildSocialMediaBar(BuildContext context) {
     return Container(
-      color: context.theme.colorScheme.primary,
+      color: Get.theme.colorScheme.primary,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -240,10 +240,10 @@ class LoginView extends StatelessWidget {
               onPressed: () {},
               icon: CircleAvatar(
                 radius: 10.5,
-                backgroundColor: context.theme.colorScheme.secondary,
+                backgroundColor: Get.theme.colorScheme.secondary,
                 child: FaIcon(
                   FontAwesomeIcons.facebookF,
-                  color: context.theme.colorScheme.primary,
+                  color: Get.theme.colorScheme.primary,
                   size: 13.5,
                 ),
               ),
@@ -254,10 +254,10 @@ class LoginView extends StatelessWidget {
               onPressed: () {},
               icon: CircleAvatar(
                 radius: 10.5,
-                backgroundColor: context.theme.colorScheme.secondary,
+                backgroundColor: Get.theme.colorScheme.secondary,
                 child: FaIcon(
                   FontAwesomeIcons.twitter,
-                  color: context.theme.colorScheme.primary,
+                  color: Get.theme.colorScheme.primary,
                   size: 13.5,
                 ),
               ),
@@ -268,10 +268,10 @@ class LoginView extends StatelessWidget {
               onPressed: () {},
               icon: CircleAvatar(
                 radius: 10.5,
-                backgroundColor: context.theme.colorScheme.secondary,
+                backgroundColor: Get.theme.colorScheme.secondary,
                 child: FaIcon(
                   FontAwesomeIcons.instagram,
-                  color: context.theme.colorScheme.primary,
+                  color: Get.theme.colorScheme.primary,
                   size: 13.5,
                 ),
               ),

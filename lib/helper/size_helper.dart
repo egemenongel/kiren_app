@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Size displaySize(BuildContext context) {
-  return MediaQuery.of(context).size;
+  return Get.mediaQuery.size;
 }
 
 double displayHeight(BuildContext context) {
-  return MediaQuery.of(context).size.height;
+  return Get.mediaQuery.size.height;
 }
 
 double displayWidth(BuildContext context) {
