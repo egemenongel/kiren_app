@@ -4,16 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kiren_app/views/login/login_view.dart';
 
 void main() {
-  runApp(const GetMaterialApp(
-    home: MyApp(),
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
           textTheme: GoogleFonts.montserratTextTheme(

@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
             icon: const Icon(
               Icons.arrow_back,
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Get.back(),
           ),
         ),
       ),
