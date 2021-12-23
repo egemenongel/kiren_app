@@ -19,13 +19,13 @@ class LoginView extends StatelessWidget {
           child: Stack(
             children: [
               SizedBox(
-                height: displayHeight(context),
+                height: displayHeight,
                 child: Column(
                   children: [
                     Expanded(
                       flex: 5,
                       child: Container(
-                        padding: largeHorizontalPadding(context),
+                        padding: largeHorizontalPadding,
                         decoration: const BoxDecoration(
                             image: DecorationImage(
                           image: AssetImage("assets/Asset 2.png"),
@@ -43,12 +43,12 @@ class LoginView extends StatelessWidget {
               Positioned(
                 top: 560,
                 bottom: 40,
-                width: displayWidth(context),
+                width: displayWidth,
                 child: Row(
                   children: [
                     Expanded(
                       child: Container(
-                        padding: largeHorizontalPadding(context),
+                        padding: largeHorizontalPadding,
                         child: ElevatedButton(
                           onPressed: () {
                             if (formController.formKey.currentState!

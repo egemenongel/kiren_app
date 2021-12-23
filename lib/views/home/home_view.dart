@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kiren_app/views/projects/project_model.dart';
 import '../../helper/size_helper.dart';
 import '../../controller/home_controller.dart';
 import '../projects/project_view.dart';
@@ -39,13 +40,13 @@ class HomeView extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: displayHeight(context),
+            height: displayHeight,
             child: Column(
               children: [
                 buildHeader(context),
                 Expanded(
                   child: Container(
-                      padding: mediumHorizontalPadding(context),
+                      padding: mediumHorizontalPadding,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -80,7 +81,7 @@ class HomeView extends StatelessWidget {
           Positioned(
             child: buildSearchBar(context),
             top: 275,
-            width: displayWidth(context),
+            width: displayWidth,
           ),
         ],
       ),
@@ -123,7 +124,7 @@ class HomeView extends StatelessWidget {
                   ),
                 ],
               ),
-              height: displayHeight(context) * 0.39),
+              height: displayHeight * 0.39),
         ),
       ],
     );
@@ -176,7 +177,7 @@ class HomeView extends StatelessWidget {
   Widget buildProjects(BuildContext context) {
     final homeController = Get.put(HomeController());
     return Container(
-      width: displayWidth(context),
+      width: displayWidth,
       decoration: const BoxDecoration(
         color: Color(0xffD3EDD9),
         borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
@@ -188,7 +189,7 @@ class HomeView extends StatelessWidget {
           var projectList = homeController.projectList;
           var projectItem = projectList[index];
           return Padding(
-              padding: smallestPadding(context),
+              padding: smallestPadding,
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -250,7 +251,7 @@ class HomeView extends StatelessWidget {
                                           child: Text(
                                             "Target:",
                                             style: TextStyle(
-                                              color: context.theme.colorScheme
+                                              color: Get.theme.colorScheme
                                                   .primaryVariant,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -290,7 +291,7 @@ class HomeView extends StatelessWidget {
                                           child: Text(
                                             "Pledget:",
                                             style: TextStyle(
-                                              color: context.theme.colorScheme
+                                              color: Get.theme.colorScheme
                                                   .primaryVariant,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -330,7 +331,7 @@ class HomeView extends StatelessWidget {
                                           child: Text(
                                             "Backers:",
                                             style: TextStyle(
-                                              color: context.theme.colorScheme
+                                              color: Get.theme.colorScheme
                                                   .primaryVariant,
                                               fontWeight: FontWeight.w600,
                                             ),
@@ -439,7 +440,7 @@ class HomeView extends StatelessWidget {
             .toList()
         : [];
     return Container(
-        width: displayWidth(context),
+        width: displayWidth,
         decoration: const BoxDecoration(
           color: Color(0xffD3EDD9),
           borderRadius: BorderRadius.vertical(top: Radius.circular(10.0)),
@@ -448,9 +449,9 @@ class HomeView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10),
           itemCount: myList.length,
           itemBuilder: (BuildContext context, int index) {
-            var projectItem = myList[index];
+            ProjectModel projectItem = myList[index];
             return Padding(
-                padding: smallestPadding(context),
+                padding: smallestPadding,
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
@@ -490,7 +491,7 @@ class HomeView extends StatelessWidget {
                                     flex: 4,
                                     child: FittedBox(
                                       child: Text(
-                                        myList[index].title,
+                                        projectItem.title,
                                         style: TextStyle(
                                           color: context
                                               .theme.colorScheme.onBackground,
@@ -512,7 +513,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "Target:",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .primaryVariant,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -528,7 +529,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "\$5000",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .secondary,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -552,7 +553,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "Pledget:",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .primaryVariant,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -568,7 +569,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "\$4,500",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .secondary,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -592,7 +593,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "Backers:",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .primaryVariant,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -608,7 +609,7 @@ class HomeView extends StatelessWidget {
                                             child: Text(
                                               "46      ",
                                               style: TextStyle(
-                                                color: context.theme.colorScheme
+                                                color: Get.theme.colorScheme
                                                     .secondary,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -696,7 +697,7 @@ class HomeView extends StatelessWidget {
           color: Get.theme.colorScheme.secondaryVariant,
         ),
       ),
-      height: displayHeight(context) * 0.088,
+      height: displayHeight * 0.088,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

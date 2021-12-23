@@ -24,7 +24,7 @@ class ProjectView extends StatelessWidget {
         elevation: 0.0,
         actions: [
           Padding(
-            padding: smallVerticalPadding(context),
+            padding: smallVerticalPadding,
             child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -215,7 +215,7 @@ class ProjectView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 )),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                  smallPadding(context),
+                  smallPadding,
                 )),
           ),
         ),
